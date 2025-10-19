@@ -1,0 +1,146 @@
+/* Style untuk logo Navbar */
+.navbar img {
+    max-height: 60px;
+    height: 60px;
+    width: auto;
+    display: inline-block;
+}
+.navbar .container-fluid{
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+}
+.navbar {
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+}
+.navbar form {
+    margin-left: auto;
+}
+.navbar .form-control {
+    width: 180px;
+    max-width: 40vw;
+}
+/* Design searchbar*/
+.navbar .form-control {
+    border-radius: 20px;
+    padding-left: .75rem;
+}
+.navbar .btn-light {
+    margin-left: .4rem;
+    border-radius: 20px;
+}
+/* Login dikanan */
+.navbar .login-link{
+    margin-left: .6rem;
+    margin-right: .4rem;
+    padding: .35rem .6rem;
+    background: transparent;
+    border-radius: 6px;
+    color: #ffffff;
+    transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+.navbar .login-link:hover{
+    background: rgba(255,255,255,0.08);
+    color: #ffdd57;
+    transform: translateY(-2px);
+}
+/* Animasi Tulisan navbarr */
+.navbar .navbar-brand{
+    color: #ffffff;
+    position: relative;
+    transition: color 180ms ease, transform 180ms ease;
+    cursor: pointer;
+}
+.navbar .navbar-brand:hover,
+.navbar .navbar-brand:focus{
+    color: #ffdd57;
+    transform: translateY(-3px);
+}
+.navbar .navbar-brand::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    width: 0;
+    background: #ffdd57;
+    transition: width 220ms ease;
+}
+.navbar .navbar-brand:hover::after,
+.navbar .navbar-brand:focus::after{
+    width: 100%;
+}
+/*  */
+.navbar .navbar-brand{
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+}
+/* Style untuk carousel */
+.carousel-inner img {
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: #666;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.carousel-indicators .active {
+  background-color: #0b4d70;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
+
+/* Style untuk card produk */
+.product-card {
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+.product-card img {
+  height: 160px;
+  object-fit: cover;
+}
+.product-card .card-title {
+  font-size: 0.9rem;
+  min-height: 40px;
+}
+.product-card .price {
+  font-size: 1rem;
+  color: #000;
+}
+.product-card .card-footer {
+  background-color: #f8f9fa;
+}
+
+.product-thumbnail {
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: border-color 0.2s ease;
+}
+
+.product-thumbnail:hover {
+        border-color: #0d6efd;
+}
+
+        /* (Opsional) Style untuk thumbnail aktif */
+.product-thumbnail.active {
+        border-color: #0d6efd; 
+}
+
+.breadcrumb-item a {
+        text-decoration: none;
+        cursor: pointer;
+}

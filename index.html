@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdaTech</title>
+    
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .product-thumbnail {
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.2s ease;
+        }
+        .product-thumbnail.active {
+            border-color: #0d6efd;
+        }
+        .sticky-top { position: sticky; }
+    </style>
+</head>
+<body>
+    <nav class="navbar" style="background-color: #32465c;">
+    <div class="container-fluid">
+      <img src="pic/Logo.png" alt="AdaTech" class="d-inline-block align-text-top p-1" onclick="showPage('page-home')">
+        <a class="navbar-brand" onclick="showPage('page-home')">Smartphone</a>
+        <a class="navbar-brand" onclick="showPage('page-home')">Laptop</a>
+        <a class="navbar-brand" onclick="showPage('page-home')">PC</a>
+        <a class="navbar-brand" onclick="showPage('page-home')">TV</a>
+        <a class="navbar-brand" onclick="showPage('page-home')">Lainnya</a>
+        <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Cari barang..." aria-label="Search"/>
+        <button class="btn btn-light" type="submit">Search</button>
+      </form>
+      <a class="navbar-brand login-link" href="#">Login</a>
+    </div>
+    </nav>
+
+    <main id="page-home">
+        <div id="mainBanner" class="carousel slide my-4" data-bs-ride="carousel">
+          <div class="carousel-inner rounded-4 shadow-sm">
+            <div class="carousel-item active">
+              <img src="pic/banner1.png" class="d-block w-100 rounded-4" alt="Banner 1">
+            </div>
+            <div class="carousel-item">
+              <img src="pic/banner2.png" class="d-block w-100 rounded-4" alt="Banner 2">
+            </div>
+            <div class="carousel-item">
+              <img src="pic/banner3.png" class="d-block w-100 rounded-4" alt="Banner 3">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#mainBanner" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#mainBanner" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#mainBanner" data-bs-slide-to="0" class="active" aria-current="true"></button>
+            <button type="button" data-bs-target="#mainBanner" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#mainBanner" data-bs-slide-to="2"></button>
+          </div>
+        </div>
+
+        <div class="container my-5">
+          <div class="row g-4">
+
+            <div class="col-md-4 col-lg-2">
+              <div class="card h-100 shadow-sm product-card" onclick="showProduct('hp')" style="cursor:pointer;">
+                <img src="pic/hp.png" class="card-img-top" alt="Hp">
+                <div class="card-body">
+                  <h6 class="card-title">SmartPhone Alpha</h6>
+                  <p class="price fw-bold text-dark mb-1">Rp2.795.000</p>
+                  <p class="text-success small mb-1">Bisa COD</p>
+                  <p class="rating text-muted small mb-0">⭐ 4.8 • 500+ terjual</p>
+
+                  <div class="d-grid gap-1 mt-2">
+                    <button class="btn btn-sm btn-primary fw-bold" onclick="beliLangsung('hp'); event.stopPropagation();">Beli Sekarang</button>
+                    <button class="btn btn-sm btn-outline-primary fw-bold" onclick="tambahKeranjang('hp'); event.stopPropagation();">+ Keranjang</button>
+                </div>
+                </div>
+                <div class="card-footer text-muted small">
+                  DBKlik Indonesia
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-lg-2">
+              <div class="card h-100 shadow-sm product-card" onclick="showProduct('pc')" style="cursor:pointer;">
+                <img src="pic/pc.jpg" class="card-img-top" alt="pc">
+                <div class="card-body">
+                  <h6 class="card-title">Pc gaming</h6>
+                  <p class="price fw-bold text-dark mb-1">Rp4.829.000</p>
+                  <p class="text-danger small mb-1">Hemat s.d 15% Pakai Bonus</p>
+                  <p class="rating text-muted small mb-0">⭐ 5.0 • 10rb+ terjual</p>
+                  <div class="d-grid gap-1 mt-2">
+                    <button class="btn btn-sm btn-primary fw-bold" onclick="beliLangsung('pc'); event.stopPropagation();">Beli Sekarang</button>
+                    <button class="btn btn-sm btn-outline-primary fw-bold" onclick="tambahKeranjang('pc'); event.stopPropagation();">+ Keranjang</button>
+                </div>
+                </div>
+                <div class="card-footer text-muted small">
+                    PC Indonesia
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-lg-2">
+              <div class="card h-100 shadow-sm product-card" onclick="showProduct('laptop')" style="cursor: pointer;">
+                <img src="pic/laptop.jpg" class="card-img-top" alt="Laptop">
+                <div class="card-body">
+                  <h6 class="card-title">Laptop Gaming Pro X15</h6>
+                  <p class="price fw-bold text-dark mb-1">Rp10.500.000</p>
+                  <p class="text-success small mb-1">Pre-Order</p>
+                  <p class="rating text-muted small mb-0">⭐ 5.0 • 1 terjual</p>
+                  <div class="d-grid gap-1 mt-2">
+                    <button class="btn btn-sm btn-primary fw-bold" onclick="beliLangsung('laptop'); event.stopPropagation();">Beli Sekarang</button>
+                    <button class="btn btn-sm btn-outline-primary fw-bold" onclick="tambahKeranjang('laptop'); event.stopPropagation();">+ Keranjang</button>
+                </div>
+                </div>
+                <div class="card-footer text-muted small">
+                  GravityComputer
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-lg-2">
+              <div class="card h-100 shadow-sm product-card" onclick="showProduct('tv')" style="cursor:pointer;">
+                <img src="pic/tv.jpg" class="card-img-top" alt="TV">
+                <div class="card-body">
+                  <h6 class="card-title">LED Smart TV 55"</h6>
+                  <p class="price fw-bold text-dark mb-1">Rp20.500.000</p>
+                  <p class="text-success small mb-1">Hemat s.d 10% Pakai Bonus</p>
+                  <p class="rating text-muted small mb-0">⭐ 4.9 • 6 terjual</p>
+                  <div class="d-grid gap-1 mt-2">
+                    <button class="btn btn-sm btn-primary fw-bold" onclick="beliLangsung('tv'); event.stopPropagation();">Beli Sekarang</button>
+                    <button class="btn btn-sm btn-outline-primary fw-bold" onclick="tambahKeranjang('tv'); event.stopPropagation();">+ Keranjang</button>
+                </div>
+                </div>
+                <div class="card-footer text-muted small">
+                  PrasTech
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-4 col-lg-2">
+              <div class="card h-100 shadow-sm product-card" onclick="showProduct('gpu')" style="cursor:pointer;">
+                <img src="pic/gpu.png" class="card-img-top" alt="GPU">
+                <div class="card-body">
+                  <h6 class="card-title">GPU Navdia 3070</h6>
+                  <p class="price fw-bold text-dark mb-1">Rp6.500.000</p>
+                  <p class="text-success small mb-1">Hemat s.d 10% Pakai Bonus</p>
+                  <p class="rating text-muted small mb-0">⭐ 4.9 • 70 terjual</p>
+                  <div class="d-grid gap-1 mt-2">
+                    <button class="btn btn-sm btn-primary fw-bold" onclick="beliLangsung('gpu'); event.stopPropagation();">Beli Sekarang</button>
+                    <button class="btn btn-sm btn-outline-primary fw-bold" onclick="tambahKeranjang('gpu'); event.stopPropagation();">+ Keranjang</button>
+                </div>
+                </div>
+                <div class="card-footer text-muted small">
+                  PrasTech
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+    </main>
+    <!-- Menu detail produk -->
+    <main id="page-product" style="display: none;">
+        <div class="container my-5">
+        
+            <nav aria-label="breadcrumb" class="mb-2">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a onclick="showPage('page-home')">Home</a></li>
+                  <li class="breadcrumb-item"><a id="breadcrumb-category" onclick="showPage('page-home')">Kategori</a></li>
+                  <li class="breadcrumb-item active" id="breadcrumb-title" aria-current="page">Produk</li>
+                </ol>
+            </nav>
+    
+            <div class="row g-4">
+                
+                <div class="col-lg-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <img src="" class="d-block w-100 rounded mb-3" alt="Produk Utama" id="mainProductImage">
+                            
+                            <div class="row g-2" id="thumbRow">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-5">
+                    <h2 class="fw-bold" id="productTitle">Judul Produk</h2>
+                    <div class="mb-2" id="productRatingArea">
+                        <span class="text-muted small" id="productRating">⭐ 5.0 • 1 terjual</span>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <span class="text-muted text-decoration-line-through me-2" id="oldPrice">Rp12.000.000</span>
+                        <span class="badge bg-danger" id="discountBadge">Diskon 12%</span>
+                        <h3 class="fw-bold text-dark mb-0 mt-1" id="price">Rp10.500.000</h3>
+                    </div>
+    
+                    <div class="mb-3" id="variantArea">
+
+                    </div>
+    
+                    <div class="mb-3" id="colorArea">
+                    </div>
+    
+                    <ul class="nav nav-tabs mt-4" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link active" id="detail-tab" data-bs-toggle="tab" data-bs-target="#detail" type="button" role="tab">Detail</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="spesifikasi-tab" data-bs-toggle="tab" data-bs-target="#spesifikasi" type="button" role="tab">Spesifikasi</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content border border-top-0 p-3 rounded-bottom" id="myTabContent">
+                        <div class="tab-pane fade show active" id="detail" role="tabpanel">
+                            <div id="productDetailText">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="spesifikasi" role="tabpanel">
+                            <ul class="list-unstyled" id="productSpecs">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-lg-3">
+                    <div class="card shadow-sm sticky-top" style="top: 20px;">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold mb-3">Atur jumlah pembelian</h5>
+                            
+                            <div class="alert alert-success small p-2 mb-3" id="promoBox">
+                                <strong>Beli Lokal!</strong> Hemat s.d 10% Pakai Bonus
+                            </div>
+    
+                            <div class="d-flex align-items-center mb-3">
+                                <label class="form-label me-3 mb-0">Jumlah</label>
+                                <div class="input-group" style="width: 130px;">
+                                    <button class="btn btn-outline-secondary" type="button" id="qtyMinus">-</button>
+                                    <input type="text" class="form-control text-center" value="1" aria-label="Jumlah" id="qtyInput">
+                                    <button class="btn btn-outline-secondary" type="button" id="qtyPlus">+</button>
+                                </div>
+                                <span class="text-muted small ms-2" id="stockText">Stok: 99</span>
+                            </div>
+    
+                            <div class="mb-3">
+                                <label for="catatan" class="form-label small">Tambah catatan</label>
+                                <input type="text" class="form-control form-control-sm" id="catatan" placeholder="Contoh: Bubble wrap tebal">
+                            </div>
+    
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="text-muted">Subtotal</span>
+                                <span class="fw-bold fs-5 text-dark" id="subtotalText">Rp0</span>
+                            </div>
+    
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-primary fw-bold" type="button" id="buyNowBtn">Beli Langsung</button>
+                                <button class="btn btn-outline-primary fw-bold" type="button" id="addCartBtn">+ Keranjang</button>
+                            </div>
+    
+                            <div class="d-flex justify-content-center gap-3 mt-3">
+                                <a href="#" class="text-decoration-none small">Chat</a>
+                                <span class="text-muted">|</span>
+                                <a href="#" class="text-decoration-none small">Wishlist</a>
+                                <span class="text-muted">|</span>
+                                <a href="#" class="text-decoration-none small">Share</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+<!-- Menu Checkout -->
+<main id="page-checkout" style="display: none;">
+  <div class="container my-5">
+    <h3 class="fw-bold mb-4">Checkout</h3>
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="card mb-4 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Ringkasan Pesanan</h5>
+            <div id="checkoutSummary" class="mt-3">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="card shadow-sm sticky-top" style="top:20px;">
+          <div class="card-body">
+            <h5 class="fw-bold mb-3">Total Pembayaran</h5>
+            <h4 class="text-dark fw-bold" id="checkoutTotal">Rp0</h4>
+            <hr>
+            <div class="d-grid gap-2">
+              <button class="btn btn-success fw-bold" type="button" id="checkoutBtn">Checkout Sekarang</button>
+              <button class="btn btn-outline-secondary" type="button" onclick="showPage('page-home')">Kembali ke Beranda</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<!-- Detail brand -->
+    <footer class="footer mt-5 pt-5 pb-3 border-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 mb-3">
+            <h6 class="fw-bold mb-3">AdaTech</h6>
+            <ul class="list-unstyled small">
+              <li><a href="#" class="footer-link">Tentang AdaTech</a></li>
+              <li><a href="#" class="footer-link">Karir</a></li>
+              <li><a href="#" class="footer-link">Blog</a></li>
+              <li><a href="#" class="footer-link">Kebijakan Privasi</a></li>
+              <li><a href="#" class="footer-link">Syarat & Ketentuan</a></li>
+            </ul>
+          </div>
+    
+          <div class="col-md-3 mb-3">
+            <h6 class="fw-bold mb-3">Layanan</h6>
+            <ul class="list-unstyled small">
+              <li><a href="#" class="footer-link">Bantuan Pelanggan</a></li>
+              <li><a href="#" class="footer-link">Garansi Produk</a></li>
+              <li><a href="#" class.footer-link">Kebijakan Pengembalian</a></li>
+              <li><a href="#" class="footer-link">Status Pesanan</a></li>
+            </ul>
+          </div>
+    
+          <div class="col-md-3 mb-3">
+            <h6 class="fw-bold mb-3">Keamanan & Privasi</h6>
+            <ul class="list-unstyled small">
+              <li>Sertifikasi ISO 27001</li>
+              <li>Keamanan Transaksi Terjamin</li>
+              <li>Data Pelanggan Dilindungi</li>
+            </ul>
+    
+            <h6 class="fw-bold mt-3">Ikuti Kami</h6>
+            <ul class="list-unstyled small">
+              <li>Facebook: AdaTechOfficial</li>
+              <li>Twitter: @AdaTechID</li>
+              <li>Instagram: @adatech.store</li>
+              <li>LinkedIn: AdaTech Indonesia</li>
+            </ul>
+          </div>
+    
+          <div class="col-md-3 mb-3">
+            <h6 class="fw-bold mb-3">Nikmati Keuntungan di Aplikasi AdaTech:</h6>
+            <ul class="list-unstyled small">
+              <li>💰 Diskon hingga 70%</li>
+              <li>🎁 Promo eksklusif pengguna baru</li>
+              <li>🚚 Gratis Ongkir setiap hari</li>
+            </ul>
+    
+            <p class="small mb-0">Buka aplikasi AdaTech dan nikmati pengalaman belanja terbaik.</p>
+            <a href="#" class="footer-link">Pelajari Selengkapnya →</a>
+          </div>
+        </div>
+    
+        <hr>
+    
+        <div class="text-center small text-muted">
+          © 2025 AdaTech. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
