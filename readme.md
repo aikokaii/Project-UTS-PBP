@@ -26,3 +26,5 @@ Website ini menampilkan daftar produk teknologi (Laptop, HP, PC, GPU, TV) lengka
 - 🎨 **Tampilan Responsif**
   - Menggunakan Bootstrap 5 untuk layout responsif dan gaya modern.
   - Desain minimalis dengan palet warna netral dan tombol interaktif.
+
+Link Youtube : https://youtu.be/vDcOzmmUSps?si=D0yiCXl8EhsMCJMs / https://www.youtube.com/watch?v=vDcOzmmUSps
